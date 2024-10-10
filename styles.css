@@ -1,0 +1,464 @@
+/* editor-styles.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    animation: fadeIn 1s ease;
+}
+
+.meme-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: fadeInScale 0.8s ease;
+}
+
+.memezar-header {
+    text-align: center;
+    position: relative;
+    animation: slideInFromTop 1s ease;
+}
+
+.memezar-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+.memezar-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 8px 0 0;
+}
+
+.canvas-and-controls {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    animation: slideInFromLeft 1s ease;
+}
+
+.canvas-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: bounceIn 1.2s ease;
+}
+
+.meme-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: slideInFromRight 1s ease;
+}
+
+.control-group {
+    margin-bottom: 8px;
+    animation: fadeIn 0.8s ease;
+}
+
+.control-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.control-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.control-input:focus {
+    border-color: #007acc;
+    outline: none;
+}
+
+.text-styling {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.sticker-options {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.button-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: bounceIn 1.2s ease;
+}
+.fade-in {
+    animation: fadeIn 1s ease;
+    color: #ff6b6b !important;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 15px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.action-button:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+.download-button {
+    padding: 10px 24px;
+    font-size: 15px;
+    background-color: #28a745;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: bounceIn 1.2s ease;
+}
+
+.download-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+canvas {
+    border: 2px solid #007acc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+canvas:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.edit-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+}
+
+.edit-options .icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    color: #4f5d75;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-options .icon-button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+
+.edit-options .icon-button i {
+    font-size: 1.2rem;
+}
+
+.projects-container {
+    margin-top: 20px;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeInScale 1.2s ease;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.load-project-button,
+.delete-project-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load-project-button {
+    background-color: #007acc;
+    color: #ffffff;
+}
+
+.load-project-button:hover {
+    background-color: #005f99;
+}
+
+.delete-project-button {
+    background-color: #d9534f;
+    color: #ffffff;
+}
+
+.delete-project-button:hover {
+    background-color: #c9302c;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.project-list-empty {
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .canvas-and-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meme-controls {
+        width: 100%;
+    }
+
+    .meme-container {
+        padding: 16px;
+    }
+
+    .button-container {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .action-button,
+    .download-button {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    .canvas-container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .help-button {
+        right: 10px;
+    }
+}
+
+/* Help Button */
+.help-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.help-button:hover {
+    background-color: #005f99;
+}
+
+/* Help Modal */
+.help-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 1s ease;
+}
+
+.help-modal-content {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translateY(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

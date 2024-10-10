@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Memezar - Meme Creator</title>
+</head>
+
+<body>
+    <div class="meme-container">
+        <header class="memezar-header">
+            <h1 class="fade-in">Memezar</h1>
+            <p>Create your meme masterpiece with ease.</p>
+        </header>
+        <button id="helpButton" class="help-button">Help</button>
+
+        <div class="canvas-and-controls">
+            <div class="canvas-container">
+                <canvas id="memeCanvas" width="400" height="400"></canvas>
+            </div>
+            <div class="meme-controls">
+                <div class="control-group">
+                    <label for="templateSelect" class="control-label">Template:</label>
+                    <select id="templateSelect" class="control-input">
+                        <option value="">Select a Template</option>
+                        <option value="drake">Drake Hotline Bling</option>
+                        <option value="distractedBoyfriend">Distracted Boyfriend</option>
+                        <option value="twoButtons">Two Buttons</option>
+                        <option value="gruPlan">Gru's Plan</option>
+                        <option value="changeMyMind">Change My Mind</option>
+                        <option value="successKid">Success Kid</option>
+                        <option value="rollSafe">Roll Safe Think About It</option>
+                        <option value="oneDoesNotSimply">One Does Not Simply</option>
+                        <option value="futuramaFry">Futurama Fry</option>
+                        <option value="evilKermit">Evil Kermit</option>
+                        <option value="braceYourselves">Brace Yourselves</option>
+                        <option value="spongebobMocking">Mocking Spongebob</option>
+                        <option value="surprisedPikachu">Surprised Pikachu</option>
+                        <option value="cryingMichaelJordan">Crying Michael Jordan</option>
+                        <option value="grumpyCat">Grumpy Cat</option>
+                        <option value="badLuckBrian">Bad Luck Brian</option>
+                        <option value="yUNo">Y U No</option>
+                        <option value="doge">Doge</option>
+                        <option value="thisIsFine">This is Fine</option>
+                        <option value="womanYellingAtCat">Woman Yelling At Cat</option>
+                        <option value="captainHolt">Captain Holt</option>
+                        <option value="darkMaga">Dark Maga</option>
+                        <option value="darkMaga2">Dark Maga 2</option>
+                        <option value="nakedOp">Naked OPPENEIMER</option>
+                        <option value="whiteHousePresser">White House Presser</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <input type="file" id="imageUpload" accept="image/*" class="control-input">
+                </div>
+                <div class="control-group">
+                    <input type="text" id="topText" placeholder="Top Text" class="control-input">
+                    <input type="text" id="bottomText" placeholder="Bottom Text" class="control-input">
+                </div>
+                <div class="text-styling">
+                    <label for="fontSelect" class="control-label">Font:</label>
+                    <select id="fontSelect" class="control-input">
+                        <option value="Helvetica Neue">Helvetica Neue</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Impact">Impact</option>
+                    </select>
+                    <label for="fontSize" class="control-label">Size:</label>
+                    <input type="number" id="fontSize" value="20" min="10" max="40" class="control-input">
+                    <label for="fontColor" class="control-label">Color:</label>
+                    <input type="color" id="fontColor" value="#000000" class="control-input">
+                </div>
+                <div class="sticker-options">
+                    <label for="stickerSelect" class="control-label">Add Sticker:</label>
+                    <select id="stickerSelect" class="control-input">
+                        <option value="">Select a Sticker</option>
+                        <option value="smile">😊</option>
+                        <option value="laugh">😂</option>
+                        <option value="thumbsUp">👍</option>
+                        <option value="fire">🔥</option>
+                        <option value="heart">❤️</option>
+                    </select>
+                </div>
+                <div class="edit-options">
+                    <button id="cropButton" class="icon-button"><i class="fas fa-crop"></i></button>
+                    <button id="rotateButton" class="icon-button"><i class="fas fa-sync-alt"></i></button>
+                    <button id="flipButton" class="icon-button"><i class="fas fa-arrows-alt-h"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="autoCaption" class="action-button">Auto-Caption</button>
+            <button id="generateMeme" class="action-button">Generate</button>
+            <button id="saveProject" class="action-button">Save Project</button>
+            <button id="updateProject" class="action-button">Update Project</button>
+            <button id="loadProjects" class="action-button">Load Projects</button>
+            <a id="downloadMeme" download="meme.png" class="download-button">Download</a>
+        </div>
+        <ul id="projectList" class="project-list"></ul>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>User Guide</h2>
+            <p>Welcome to Memezar! Here's how to get started:</p>
+            <ol>
+                <li>Select a <strong>template</strong> or <strong>upload your own image</strong> to start creating your meme.</li>
+                <li>Use the <strong>Top Text</strong> and <strong>Bottom Text</strong> fields to add captions to your meme.</li>
+                <li>Choose your preferred <strong>font, size, and color</strong> to customize the text.</li>
+                <li>Add stickers to make your meme more expressive by selecting from the <strong>Sticker</strong> dropdown.</li>
+                <li>Use the <strong>crop, rotate, or flip</strong> buttons to adjust the image.</li>
+                <li>Click <strong>Auto-Caption</strong> for some fun, pre-generated captions based on the template.</li>
+                <li>Once done, click <strong>Generate</strong> to create the meme, then <strong>Download</strong> it or <strong>Save Project</strong> to come back later.</li>
+                <li>You can <strong>load, update, or delete</strong> saved projects at any time.</li>
+            </ol>
+            <p>Have fun and get creative with your memes!</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Help Modal -->
+    <script>
+        // Help Modal Script
+        const helpButton = document.getElementById('helpButton');
+        const helpModal = document.getElementById('helpModal');
+        const closeButton = helpModal.querySelector('.close-button');
+
+        helpButton.addEventListener('click', () => {
+            helpModal.style.display = 'flex';
+        });
+
+        closeButton.addEventListener('click', () => {
+            helpModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == helpModal) {
+                helpModal.style.display = 'none';
+            }
+        });
+    </script>
+
+    <!-- Main JavaScript File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
