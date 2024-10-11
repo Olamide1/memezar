@@ -51,7 +51,8 @@ const memeTemplates = {
     darkMaga: 'template_image/dark_maga.png',
     darkMaga2: 'template_image/dark_maga 2.jpeg',
     nakedOp: 'template_image/naked_oppeneimher.jpeg',
-    whiteHousePresser: 'template_image/white_house_presser.jpeg'
+    whiteHousePresser: 'template_image/white_house_presser.jpeg',
+    adviceYourself: 'template_image/advice_yourself.jpeg'
 };
 
 // IndexedDB setup
@@ -253,6 +254,10 @@ autoCaption.addEventListener('click', () => {
             case 'whiteHousePresser':
                 topText.value = "WTH";
                 bottomText.value = "Is that?";
+                break;
+            case 'adviceYourself':
+                topText.value = "WTH Bro";
+                bottomText.value = "Don't fumble it now";
                 break;
             default:
                 topText.value = "";
