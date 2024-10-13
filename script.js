@@ -62,7 +62,7 @@ const memeTemplates = {
     captainHolt: 'template_image/capt_Holt.jpg',
     darkMaga: 'template_image/dark_maga.png',
     darkMaga2: 'template_image/dark_maga2.jpeg',
-    nakedOp: 'template_image/naked_oppeneimer.jpeg',
+    nakedOp: 'template_image/naked_oppeneimher.jpeg',
     whiteHousePresser: 'template_image/white_house_presser.jpeg',
     adviceYourself: 'template_image/advice_yourself.jpeg'
 };
