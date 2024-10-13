@@ -1,5 +1,6 @@
-/* editor-styles.css */
+/* Stylesheet */
 
+/* Base Styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     display: flex;
@@ -104,16 +105,37 @@ body {
     outline: none;
 }
 
-.text-styling {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 4px;
+.text-controls {
+    margin-top: 16px;
 }
 
-.sticker-options {
-    width: 100%;
-    margin-bottom: 8px;
+.text-box-list {
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.text-box-item {
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.text-box-item:hover {
+    background-color: #e9e9e9;
+}
+
+.text-box-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.text-box-controls .control-label {
+    margin-top: 8px;
 }
 
 .button-container {
@@ -123,6 +145,7 @@ body {
     justify-content: center;
     animation: bounceIn 1.2s ease;
 }
+
 .fade-in {
     animation: fadeIn 1s ease;
     color: #ff6b6b !important;

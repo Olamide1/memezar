@@ -2,15 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- Head Content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Memezar - Meme Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="meme-container">
+        <!-- Header -->
         <header class="memezar-header">
             <h1 class="fade-in">Memezar</h1>
             <p>Create your meme masterpiece with ease.</p>
@@ -19,13 +22,15 @@
 
         <div class="canvas-and-controls">
             <div class="canvas-container">
-                <canvas id="memeCanvas" width="400" height="400"></canvas>
+                <canvas id="memeCanvas" width="500" height="500"></canvas>
             </div>
             <div class="meme-controls">
+                <!-- Template Selection -->
                 <div class="control-group">
                     <label for="templateSelect" class="control-label">Template:</label>
                     <select id="templateSelect" class="control-input">
                         <option value="">Select a Template</option>
+                        <!-- Template Options -->
                         <option value="drake">Drake Hotline Bling</option>
                         <option value="distractedBoyfriend">Distracted Boyfriend</option>
                         <option value="twoButtons">Two Buttons</option>
@@ -46,6 +51,7 @@
                         <option value="doge">Doge</option>
                         <option value="thisIsFine">This is Fine</option>
                         <option value="womanYellingAtCat">Woman Yelling At Cat</option>
+                        <!-- Custom Templates -->
                         <option value="captainHolt">Captain Holt</option>
                         <option value="darkMaga">Dark Maga</option>
                         <option value="darkMaga2">Dark Maga 2</option>
@@ -55,26 +61,33 @@
                     </select>
                 </div>
 
+                <!-- Image Upload -->
                 <div class="control-group">
                     <input type="file" id="imageUpload" accept="image/*" class="control-input">
                 </div>
-                <div class="control-group">
-                    <input type="text" id="topText" placeholder="Top Text" class="control-input">
-                    <input type="text" id="bottomText" placeholder="Bottom Text" class="control-input">
+
+                <!-- Text Boxes Controls -->
+                <div class="text-controls">
+                    <button id="addTextBox" class="action-button">Add Text Box</button>
+                    <div id="textBoxList" class="text-box-list"></div>
+                    <div class="text-box-controls">
+                        <label for="textBoxText" class="control-label">Text:</label>
+                        <input type="text" id="textBoxText" class="control-input">
+                        <label for="textBoxFont" class="control-label">Font:</label>
+                        <select id="textBoxFont" class="control-input">
+                            <option value="Helvetica Neue">Helvetica Neue</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Impact">Impact</option>
+                        </select>
+                        <label for="textBoxFontSize" class="control-label">Size:</label>
+                        <input type="number" id="textBoxFontSize" value="20" min="10" max="100" class="control-input">
+                        <label for="textBoxFontColor" class="control-label">Color:</label>
+                        <input type="color" id="textBoxFontColor" value="#000000" class="control-input">
+                    </div>
                 </div>
-                <div class="text-styling">
-                    <label for="fontSelect" class="control-label">Font:</label>
-                    <select id="fontSelect" class="control-input">
-                        <option value="Helvetica Neue">Helvetica Neue</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Comic Sans MS">Comic Sans MS</option>
-                        <option value="Impact">Impact</option>
-                    </select>
-                    <label for="fontSize" class="control-label">Size:</label>
-                    <input type="number" id="fontSize" value="20" min="10" max="40" class="control-input">
-                    <label for="fontColor" class="control-label">Color:</label>
-                    <input type="color" id="fontColor" value="#000000" class="control-input">
-                </div>
+
+                <!-- Sticker Options -->
                 <div class="sticker-options">
                     <label for="stickerSelect" class="control-label">Add Sticker:</label>
                     <select id="stickerSelect" class="control-input">
@@ -86,13 +99,18 @@
                         <option value="heart">❤️</option>
                     </select>
                 </div>
+
+                <!-- Edit Options -->
                 <div class="edit-options">
                     <button id="cropButton" class="icon-button"><i class="fas fa-crop"></i></button>
                     <button id="rotateButton" class="icon-button"><i class="fas fa-sync-alt"></i></button>
                     <button id="flipButton" class="icon-button"><i class="fas fa-arrows-alt-h"></i></button>
+                    <button id="clearCanvasButton" class="icon-button"><i class="fas fa-trash-alt"></i></button>
                 </div>
             </div>
         </div>
+
+        <!-- Button Container -->
         <div class="button-container">
             <button id="autoCaption" class="action-button">Auto-Caption</button>
             <button id="generateMeme" class="action-button">Generate</button>
@@ -101,6 +119,8 @@
             <button id="loadProjects" class="action-button">Load Projects</button>
             <a id="downloadMeme" download="meme.png" class="download-button">Download</a>
         </div>
+
+        <!-- Project List -->
         <ul id="projectList" class="project-list"></ul>
     </div>
 
@@ -112,11 +132,13 @@
             <p>Welcome to Memezar! Here's how to get started:</p>
             <ol>
                 <li>Select a <strong>template</strong> or <strong>upload your own image</strong> to start creating your meme.</li>
-                <li>Use the <strong>Top Text</strong> and <strong>Bottom Text</strong> fields to add captions to your meme.</li>
+                <li>Click on <strong>Add Text Box</strong> to add captions to your meme.</li>
+                <li>Select a text box from the list to edit its properties or drag it on the canvas to reposition.</li>
                 <li>Choose your preferred <strong>font, size, and color</strong> to customize the text.</li>
                 <li>Add stickers to make your meme more expressive by selecting from the <strong>Sticker</strong> dropdown.</li>
                 <li>Use the <strong>crop, rotate, or flip</strong> buttons to adjust the image.</li>
                 <li>Click <strong>Auto-Caption</strong> for some fun, pre-generated captions based on the template.</li>
+                <li>Use <strong>Ctrl+Z</strong> to undo and <strong>Ctrl+Y</strong> to redo your actions.</li>
                 <li>Once done, click <strong>Generate</strong> to create the meme, then <strong>Download</strong> it or <strong>Save Project</strong> to come back later.</li>
                 <li>You can <strong>load, update, or delete</strong> saved projects at any time.</li>
             </ol>
@@ -124,7 +146,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Help Modal -->
+    <!-- Help Modal JavaScript -->
     <script>
         // Help Modal Script
         const helpButton = document.getElementById('helpButton');
